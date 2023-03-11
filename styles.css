@@ -2,9 +2,25 @@
     outline: solid red;
     
 } */
+body {
+    background-image: url(background2.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    /* background-attachment: fixed; */
+    background-size: 80em auto;
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+
+.calculator {
+    
+}
 
 h1 {
     text-align: center;
+    padding-top: 3em;
 
 }
 
@@ -15,10 +31,12 @@ h1 {
     align-items: center;
     width: 10em;
     height: 2em;
+    /*MAKE OUTPUT FONT BOLD SOLID INK TYPE BLACK FONT
 }
 
 #clear {
-    margin-left: 28.2em;
+    display: flex;
+    /* margin: auto; */
     border-radius: 7px;
 }
 
@@ -29,7 +47,7 @@ h1 {
     height: 14em;
     width: 14em;
     margin: .3em auto;
-    gap: 3px
+    gap: 3px;
 }
 
 #btn {
