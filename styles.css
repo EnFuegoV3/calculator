@@ -41,6 +41,8 @@ h1 {
     display: flex;
     margin: auto; 
     border-radius: 7px;
+    background-color: #343434;
+    color: white;
 }
 
 .buttons {
@@ -55,4 +57,8 @@ h1 {
 
 #btn {
     border-radius: 7px;
+}
+
+.op {
+    box-shadow: inset 0px 0px 5px 1px #2f4f4f;
 }
