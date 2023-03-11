@@ -1,0 +1,34 @@
+/* * {
+    outline: solid red;
+    
+} */
+
+h1 {
+    text-align: center;
+
+}
+
+.output {
+    display: flex;
+    margin: 0 auto;
+    justify-content: right;
+    align-items: center;
+    width: 10em;
+    height: 2em;
+
+
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    grid-template-rows: repeat(4, auto);
+    height: 14em;
+    width: 14em;
+    margin: .3em auto;
+    gap: 3px
+}
+
+#btn {
+    border-radius: 7px;
+}
