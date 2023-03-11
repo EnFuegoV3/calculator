@@ -27,16 +27,19 @@ h1 {
 .output {
     display: flex;
     margin: 0 auto;
-    justify-content: right;
+    justify-content: center;
     align-items: center;
     width: 10em;
     height: 2em;
-    /*MAKE OUTPUT FONT BOLD SOLID INK TYPE BLACK FONT
+    color: #343434;
+    font-weight: bolder;
+    font-size: 2rem;
+    font-family: 'Hussar Gothic', sans-serif;;
 }
 
 #clear {
     display: flex;
-    /* margin: auto; */
+    margin: auto; 
     border-radius: 7px;
 }
 
