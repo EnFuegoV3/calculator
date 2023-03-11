@@ -15,8 +15,11 @@ h1 {
     align-items: center;
     width: 10em;
     height: 2em;
+}
 
-
+#clear {
+    margin-left: 28.2em;
+    border-radius: 7px;
 }
 
 .buttons {
