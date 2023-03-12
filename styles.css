@@ -15,7 +15,7 @@ body {
 }
 
 .calculator {
-    
+    margin-top: -12em;
 }
 
 h1 {
@@ -24,7 +24,23 @@ h1 {
 
 }
 
+.equation {
+    margin: auto;
+    line-height: 10em;
+    border: 1px solid red;
+    height: 12em;
+    width: 2em;
+    text-align: center;
+    position: relative;
+    writing-mode: vertical-lr;
+    text-orientation: upright;
+    padding-right: 8em;
+    font-size: .8rem;
+    font-family: 'Hussar Gothic', sans-serif;;
+}
+
 .output {
+    border: 1px solid red;;
     display: flex;
     margin: 0 auto;
     justify-content: center;
@@ -60,4 +76,9 @@ button {
 
 .op {
     box-shadow: inset 0px 0px 5px 1px #2f4f4f;
+}
+
+.equal {
+    background-color: #2f4f4f;
+    color: white;
 }
