@@ -40,7 +40,6 @@ h1 {
 #clear {
     display: flex;
     margin: auto; 
-    border-radius: 7px;
     background-color: #343434;
     color: white;
 }
@@ -55,7 +54,7 @@ h1 {
     gap: 3px;
 }
 
-#btn {
+button {
     border-radius: 7px;
 }
 
