@@ -4,23 +4,7 @@ const equal = document.querySelector('.equal');
 const opp = document.querySelectorAll('.buttons > .op');
 const headEq = document.querySelector('.equation');
 
-// equal.addEventListener('click', operate());
 let equation = [];
-
-
-
-// numbers.forEach(function(){
-//     numbers.addEventListener('click',() => {
-
-//     })
-// })
-    
-// // numbers.addEventListener('click', (e) => {
-// //     let num = e.target.id;
-// //     output.append(num);
-// // })
-
-
 
 const clear = document.querySelector('#clear');
     clear.addEventListener('click', () => {
@@ -44,8 +28,6 @@ function division(x,y) {
 };
 
 
-
-
 function operate() {
     let a
     let b
@@ -64,41 +46,6 @@ function operate() {
 let num1 = document.createElement('span');
 let sign = document.createElement('span');
 let num2 = document.createElement('span');
-
-
-// function display() {
-//     let num1 = document.createElement('span');
-//     let sign = document.createElement('span');
-//     let num2 = document.createElement('span');
-//     numbers.forEach(function(numbers) {
-//         numbers.addEventListener('click', (e) => {
-//             if(sign.textContent == "") {
-//             let btn = e.target.id;
-//             output.appendChild(num1);
-//             num1.append(btn);
-//             equation.first = num1.textContent;        
-//         } else {output.removeChild(sign);
-//                 headEq.appendChild(sign);
-//                 let btn = e.target.id;
-//                 output.appendChild(num2);
-//                 num2.append(btn);
-//                 equation.second = num2.textContent;
-//                 } 
-//             })})
-    
-//     opp.forEach(function(opp) {
-//         opp.addEventListener('click', (e) => {
-//             output.removeChild(num1);
-//             headEq.appendChild(num1);
-//             let btn = e.target.id;
-//             output.appendChild(sign);
-//             sign.textContent = btn;
-//             equation.opp = btn;
-//             console.log(equation.opp);
-//         }) 
-//     });
-    
-// }
 
 function operand() {
     opp.forEach(function(opp) {
