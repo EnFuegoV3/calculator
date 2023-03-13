@@ -29,18 +29,20 @@ function division(x,y) {
 
 
 function operate() {
-    let a
-    let b
-    let op
-    if(op = '+'){
-        addition(a, b);
-    } else if(op = '-') {
-        subtraction(a, b);
-    } else if(op = 'x'){
-        multiply(a, b);
-    } else if(op ='/'){
-        division(a,b);
+    let a = Number(equation[0]);
+    let b = Number(equation[2]);
+    let c = equation[1];
+    let outcome
+    if(c == '+'){
+        outcome = addition(a, b);
+    } else if(c == '-') {
+        outcome = subtraction(a, b);
+    } else if(c == 'x'){
+        outcome = multiply(a, b);
+    } else if(c == '/'){
+        outcome = division(a,b).toFixed(5);
     }
+        return outcome
 }
 
 let num1 = document.createElement('span');
@@ -54,11 +56,11 @@ function operand() {
             let btn = e.target.id;
             output.appendChild(sign);
             sign.textContent = btn;
-            equation.opp = [btn];
-            // equation.push([btn])
+            // equation.opp = [btn];
+            equation.push([btn])
             headEq.append(output.textContent);
             output.textContent = "";
-            console.log(equation.opp);
+            // console.log(equation.opp);
         }) 
     });
 }
@@ -68,7 +70,7 @@ function value(){
         numbers.addEventListener('click', (e) => {
             let btn = e.target.id;
             output.append(btn);          
-            console.log(equation.numbers);
+            // console.log(equation.numbers);
         })  
     });
 }
@@ -77,6 +79,9 @@ equal.addEventListener('click', ()=>{
     equation.push([output.textContent]);
     headEq.append(output.textContent);
     output.textContent = "";
+    operate();
+    // console.log(operate());
+    output.append(operate());
     console.log(equation);
 })
 
