@@ -27,7 +27,7 @@ h1 {
 .equation {
     margin: auto;
     line-height: 10em;
-    border: 1px solid red;
+    /* border: 1px solid red; */
     height: 12em;
     width: 2em;
     text-align: center;
@@ -40,7 +40,7 @@ h1 {
 }
 
 .output {
-    border: 1px solid red;;
+    /* border: 1px solid red;; */
     display: flex;
     margin: 0 auto;
     justify-content: center;

@@ -5,11 +5,7 @@ const opp = document.querySelectorAll('.buttons > .op');
 const headEq = document.querySelector('.equation');
 
 // equal.addEventListener('click', operate());
-let equation = {
-    first: null,
-    opp: null,
-    second: null,
-}
+let equation = [];
 
 
 
@@ -51,7 +47,7 @@ function division(x,y) {
 
 
 function operate() {
-    let a 
+    let a
     let b
     let op
     if(op = '+'){
@@ -67,78 +63,81 @@ function operate() {
 
 let num1 = document.createElement('span');
 let sign = document.createElement('span');
-let num2 = document.createElement('div');
+let num2 = document.createElement('span');
 
 
-function firstValue() {
-    // let num1 = document.createElement('span');
-    // let sign = document.createElement('span');
-    // let num2 = document.createElement('div');
-    numbers.forEach(function(numbers) {
-        numbers.addEventListener('click', (e) => {
-            let btn = e.target.id;
-            output.appendChild(num1);
-            num1.append(btn);
-            equation.first = num1.textContent;
-            
-            // console.log(equation.first)          
-        })  
-    });
-    // opp.forEach(function(opp) {
-    //     opp.addEventListener('click', (e) => {
-    //         output.removeChild(num1);
-    //         headEq.appendChild(num1);
-    //         let btn = e.target.id;
-    //         output.appendChild(sign);
-    //         sign.textContent = btn;
-    //         equation.opp = btn;
-    //         console.log(equation.opp);
-    //     }) 
-    // });
-    // numbers.forEach(function(numbers) {
-    //     numbers.addEventListener('click', (e) => {
-    //         output.removeChild(sign);
-    //         headEq.appendChild(sign);
-    //         let btn = e.target.id;
-    //         output.appendChild(num2);
-    //         num2.append(btn);
-    //         equation.second = num2.textContent;
-    //     })  
-    // });
-}
+// function display() {
+//     let num1 = document.createElement('span');
+//     let sign = document.createElement('span');
+//     let num2 = document.createElement('span');
+//     numbers.forEach(function(numbers) {
+//         numbers.addEventListener('click', (e) => {
+//             if(sign.textContent == "") {
+//             let btn = e.target.id;
+//             output.appendChild(num1);
+//             num1.append(btn);
+//             equation.first = num1.textContent;        
+//         } else {output.removeChild(sign);
+//                 headEq.appendChild(sign);
+//                 let btn = e.target.id;
+//                 output.appendChild(num2);
+//                 num2.append(btn);
+//                 equation.second = num2.textContent;
+//                 } 
+//             })})
+    
+//     opp.forEach(function(opp) {
+//         opp.addEventListener('click', (e) => {
+//             output.removeChild(num1);
+//             headEq.appendChild(num1);
+//             let btn = e.target.id;
+//             output.appendChild(sign);
+//             sign.textContent = btn;
+//             equation.opp = btn;
+//             console.log(equation.opp);
+//         }) 
+//     });
+    
+// }
 
 function operand() {
     opp.forEach(function(opp) {
         opp.addEventListener('click', (e) => {
-            output.removeChild(num1);
-            headEq.appendChild(num1);
+            equation.push([output.textContent]);
             let btn = e.target.id;
             output.appendChild(sign);
             sign.textContent = btn;
-            equation.opp = btn;
+            equation.opp = [btn];
+            // equation.push([btn])
+            headEq.append(output.textContent);
+            output.textContent = "";
             console.log(equation.opp);
         }) 
     });
 }
 
-function secValue(){
+function value(){
     numbers.forEach(function(numbers) {
         numbers.addEventListener('click', (e) => {
-            output.removeChild(sign);
-            headEq.appendChild(sign);
             let btn = e.target.id;
-            output.appendChild(num2);
-            num2.append(btn);
-            equation.second = num2.textContent;
+            output.append(btn);          
+            console.log(equation.numbers);
         })  
     });
 }
-function display() {
-    firstValue();
-    operand();
-    secValue;
-}
 
-display();
+equal.addEventListener('click', ()=>{
+    equation.push([output.textContent]);
+    headEq.append(output.textContent);
+    output.textContent = "";
+    console.log(equation);
+})
+
+value();
+operand();
+
+
+
+
 
 
