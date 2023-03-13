@@ -31,7 +31,8 @@ h1 {
     height: 12em;
     width: 2em;
     text-align: center;
-    position: relative;
+    text-align: end;
+    /* position: relative; */
     writing-mode: vertical-lr;
     text-orientation: upright;
     padding-right: 8em;

@@ -80,7 +80,7 @@ equal.addEventListener('click', ()=>{
     headEq.append(output.textContent);
     output.textContent = "";
     operate();
-    // console.log(operate());
+    headEq.append('=')
     output.append(operate());
     console.log(equation);
 })
