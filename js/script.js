@@ -59,10 +59,11 @@ function operand() {
             if(equation.length >= 2) {
                 let btn = e.target.id;
                 equation.splice(2,2,[output.textContent]);
-                equation.splice(1, 1, [btn]);
+                
                 headEq.append(output.textContent);
                 output.textContent = "";
                 operate();
+                equation.splice(1, 1, [btn]);
                 headEq.append(e.target.id)
                 output.append(operate());
                 equation.splice(0,0,[output.textContent]);
