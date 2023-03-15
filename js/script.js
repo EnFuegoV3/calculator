@@ -7,8 +7,13 @@ const headEq = document.querySelector('.equation');
 let firstNum
 let secondNum
 let operand
-let outcome
-let holler
+let answer
+let count = 0;
+
+// opp.forEach(function(opp) {
+//     opp.addEventListener('click', (e) => {
+//         operand = e.target.id
+//     })})
 
 const clear = document.querySelector('#clear');
     clear.addEventListener('click', () => {
@@ -46,6 +51,7 @@ function operate() {
     } else if(c == '/'){
         outcome = division(a,b).toFixed(4);
     }
+        // answer = outcome;
         return outcome
 }
 
@@ -54,22 +60,30 @@ let sign = document.createElement('span');
 let num2 = document.createElement('span');
 
 function display() {
-    if(firstNum === 'string' && output.textContent === 'string'){
-        opp.forEach(function(opp) {
-            opp.addEventListener('click', (e) => {
-                specialEquals();
-            
-            }) 
-        });
-    }
-    else {numbers.forEach(function(numbers) {
+    numbers.forEach(function(numbers) {
         numbers.addEventListener('click', (e) => {
+            if(count >= 1) {
+                output.textContent = "";
+                let btn = e.target.id;
+                output.append(btn);   
+                secondNum = output.textContent;
+            }
+            output.textContent = "";
             let btn = e.target.id;
             output.append(btn);          
         })  
     });
     opp.forEach(function(opp) {
         opp.addEventListener('click', (e) => {
+            if(count >= 1){
+                operate();
+                firstNum = operate();
+                operand = e.target.id
+                
+                
+                
+            } else {
+            count++;
             firstNum = output.textContent;
             let btn = e.target.id;
             output.appendChild(sign);
@@ -77,6 +91,9 @@ function display() {
             operand = btn;
             headEq.append(output.textContent);
             output.textContent = ""; 
+            console.log(firstNum, secondNum, operand, answer);
+            console.log(count);
+            }
         }) 
     });
     equal.addEventListener('click', ()=>{
@@ -84,51 +101,30 @@ function display() {
         headEq.append(output.textContent);
         output.textContent = "";
         operate();
+        answer = operate();
         headEq.append('=')
         output.append(operate());
-        console.log(firstNum, secondNum, operand);
-    });
-    }
         
-    
+    });
+    console.log(firstNum, secondNum, operand, answer);   
+  
 }
-
-// function value(){
-//     numbers.forEach(function(numbers) {
-//         numbers.addEventListener('click', (e) => {
-//             let btn = e.target.id;
-//             output.append(btn);          
-//         })  
+// while(count >= 1){
+//     specialEquals();
+// }   
+// function specialEquals()  {
+//     opp.forEach(function(opp) {
+//         opp.addEventListener('click', (e) => {
+//             secondNum = output.textContent;
+//             headEq.append(output.textContent);
+//             output.textContent = "";
+//             operate();
+            
+//             headEq.append('=')
+//             output.append(operate());
+//         }) 
 //     });
 // }
-
-// equal.addEventListener('click', ()=>{
-//     secondNum = output.textContent;
-//     headEq.append(output.textContent);
-//     output.textContent = "";
-//     operate();
-//     headEq.append('=')
-//     output.append(operate());
-//     console.log(firstNum, secondNum, operand);
-// })
-
-function specialEquals()  {
-    equal.addEventListener('click', ()=>{
-        secondNum = output.textContent;
-        // headEq.append(output.textContent);
-        // output.textContent = "";
-        operate();
-        // headEq.append('=')
-        output.append(operate());
-        console.log(firstNum, secondNum, operand);
-        
-    }) 
-}
 // value();
 display();
-
-
-
-
-
-
+console.log(firstNum)
