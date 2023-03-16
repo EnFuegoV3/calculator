@@ -38,6 +38,7 @@ function division(x,y) {
 
 
 function operate() {
+    // output.textContent = "";
     let a = Number(firstNum);
     let b = Number(secondNum);
     let c = operand;
@@ -53,6 +54,7 @@ function operate() {
     }
         // answer = outcome;
         return outcome
+        
 }
 
 let num1 = document.createElement('span');
@@ -63,22 +65,29 @@ function display() {
     numbers.forEach(function(numbers) {
         numbers.addEventListener('click', (e) => {
             if(count >= 1) {
-                output.textContent = "";
+                
+                // output.textContent = "";
+                
                 let btn = e.target.id;
                 output.append(btn);   
                 secondNum = output.textContent;
-            }
-            output.textContent = "";
+                
+            } else {
+            // output.textContent = "";
             let btn = e.target.id;
-            output.append(btn);          
+            output.append(btn);  
+            }        
         })  
     });                                                 //need to do PEMDAS and show full equation
     opp.forEach(function(opp) {
         opp.addEventListener('click', (e) => {
             if(count >= 1){
                 operate();
+                output.append(operate());
                 firstNum = operate();
                 operand = e.target.id
+                output.textContent = "";
+                
                 
                 
                 
@@ -101,7 +110,7 @@ function display() {
         headEq.append(output.textContent);
         output.textContent = "";
         operate();
-        answer = operate();
+        // answer = operate();
         headEq.append('=')
         output.append(operate());
         
