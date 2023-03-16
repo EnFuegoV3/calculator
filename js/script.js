@@ -7,9 +7,7 @@ const headEq = document.querySelector('.equation');
 let firstNum
 let secondNum
 let operand
-let answer
 let count = 0;
-
 
 const clear = document.querySelector('#clear');
     clear.addEventListener('click', () => {
@@ -100,7 +98,6 @@ function display() {
         headEq.append(output.textContent);
         output.textContent = "";
         operate();
-        // answer = operate();
         headEq.append('=')
         output.append(operate());
         
