@@ -34,7 +34,6 @@ function division(x,y) {
 
 
 function operate() {
-    // output.textContent = "";
     let a = Number(firstNum);
     let b = Number(secondNum);
     let c = operand;
@@ -62,14 +61,13 @@ function display() {
                 num2.textContent = "";
                 let btn = e.target.id;
                 output.append(btn);   
-                secondNum = output.textContent;
-                
+                secondNum = output.textContent;               
             } else {
             let btn = e.target.id;
             output.append(btn);  
             }        
         })  
-    });                                                 //need to do PEMDAS and show full equation
+    });                                                 
     opp.forEach(function(opp) {
         opp.addEventListener('click', (e) => {
             if(count >= 1){
@@ -90,8 +88,6 @@ function display() {
             operand = btn;
             headEq.append(output.textContent);
             output.textContent = ""; 
-            console.log(firstNum, secondNum, operand, answer);
-            console.log(count);
             }
         }) 
     });
@@ -104,26 +100,7 @@ function display() {
         headEq.append('=')
         output.append(operate());
         
-    });
-    console.log(firstNum, secondNum, operand, answer);   
-  
+    });  
 }
-// while(count >= 1){
-//     specialEquals();
-// }   
-// function specialEquals()  {
-//     opp.forEach(function(opp) {
-//         opp.addEventListener('click', (e) => {
-//             secondNum = output.textContent;
-//             headEq.append(output.textContent);
-//             output.textContent = "";
-//             operate();
-            
-//             headEq.append('=')
-//             output.append(operate());
-//         }) 
-//     });
-// }
-// value();
+
 display();
-console.log(firstNum)
