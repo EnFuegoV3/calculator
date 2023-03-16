@@ -72,7 +72,7 @@ function display() {
             let btn = e.target.id;
             output.append(btn);          
         })  
-    });
+    });                                                 //need to do PEMDAS and show full equation
     opp.forEach(function(opp) {
         opp.addEventListener('click', (e) => {
             if(count >= 1){
