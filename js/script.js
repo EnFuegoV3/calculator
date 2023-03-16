@@ -13,7 +13,7 @@ let count = 0;
 
 const clear = document.querySelector('#clear');
     clear.addEventListener('click', () => {
-    location.reload();
+    window.location.reload();
 })
 
 function addition(x,y) {
