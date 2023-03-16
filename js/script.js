@@ -45,9 +45,13 @@ function operate() {
     } else if(c == 'x'){
         outcome = multiply(a, b);
     } else if(c == '/'){
-        outcome = division(a,b).toFixed(4);
+        outcome = division(a,b);
     }
+    if(Number.isInteger(outcome) == false){
+        return outcome.toFixed(4)
+    }  else{
         return outcome
+        }
 }
 
 let num1 = document.createElement('span');
