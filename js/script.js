@@ -10,10 +10,6 @@ let operand
 let answer
 let count = 0;
 
-// opp.forEach(function(opp) {
-//     opp.addEventListener('click', (e) => {
-//         operand = e.target.id
-//     })})
 
 const clear = document.querySelector('#clear');
     clear.addEventListener('click', () => {
@@ -52,9 +48,7 @@ function operate() {
     } else if(c == '/'){
         outcome = division(a,b).toFixed(4);
     }
-        // answer = outcome;
         return outcome
-        
 }
 
 let num1 = document.createElement('span');
@@ -65,15 +59,12 @@ function display() {
     numbers.forEach(function(numbers) {
         numbers.addEventListener('click', (e) => {
             if(count >= 1) {
-                
-                // output.textContent = "";
-                
+                num2.textContent = "";
                 let btn = e.target.id;
                 output.append(btn);   
                 secondNum = output.textContent;
                 
             } else {
-            // output.textContent = "";
             let btn = e.target.id;
             output.append(btn);  
             }        
@@ -82,15 +73,14 @@ function display() {
     opp.forEach(function(opp) {
         opp.addEventListener('click', (e) => {
             if(count >= 1){
+                headEq.append(output.textContent)
+                headEq.append(e.target.id)
+                output.textContent = "";
                 operate();
-                output.append(operate());
+                num2.textContent = operate()
+                output.appendChild(num2);
                 firstNum = operate();
                 operand = e.target.id
-                output.textContent = "";
-                
-                
-                
-                
             } else {
             count++;
             firstNum = output.textContent;
